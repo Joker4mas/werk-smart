@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-
+import { Button } from "rsuite";
+import { Container, Header, Content, Footer } from "rsuite";
 export const meta: MetaFunction = () => {
   return [
     { logo: "/favicon.ico" },
@@ -10,8 +11,8 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="grid px-16 ">
-      <header className="flex items-center  flex-wrap flex-1 gap-8 mt-4">
+    <Container className="grid px-16 ">
+      <Header className="flex items-center  flex-wrap flex-1 gap-8 mt-4">
         <img src="/public/logo.png" alt="" />
         <ul className="flex space-x-4 list-none flex-wrap flex-1 items-center justify-end">
           <li>Pricing</li>
@@ -19,18 +20,34 @@ export default function Index() {
           <li>Learn More</li>
         </ul>
         <div className="login flex gap-4 flex-wrap">
-          <button className="hover:border-2 border-blue-600  w-32 hover:rounded-2xl">
+          <Button
+            className="
+            w-32 rounded-xl bg-blue-700
+              hover:border-2 hover:border-blue-600 hover:bg-black
+            "
+          >
             Login
-          </button>
-          <button
-            className="w-32 rounded-2xl bg-blue-700
-            hover:border-2 hover:border-blue-600 hover:bg-black
-          "
+          </Button>
+          <Button
+            className="w-32 rounded-xl bg-blue-700
+              hover:border-2 hover:border-blue-600 hover:bg-black
+            "
           >
             Get Started
-          </button>
+          </Button>
         </div>
-      </header>
-    </div>
+      </Header>
+      <Content>
+        <div className="flex flex-col items-center justify-center h-screen">
+          <h1 className="text-5xl font-bold">Welcome to WERK</h1>
+          <p className="text-2xl">The best place to find jobs</p>
+        </div>
+      </Content>
+      <Footer>
+        <div className="flex items-center justify-center">
+          <p className="text-2xl">Footer</p>
+        </div>
+      </Footer>
+    </Container>
   );
 }
