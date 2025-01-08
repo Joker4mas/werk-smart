@@ -56,7 +56,7 @@ export default function Index() {
         <div
           className={`${
             isMenuOpen ? "flex" : "hidden"
-          } lg:flex flex-col lg:flex-row absolute lg:relative top-16 lg:top-0 left-0 lg:left-auto w-full lg:w-auto dark:bg-black 
+          } lg:flex flex-col lg:flex-row absolute lg:relative top-16 lg:top-0 left-0 lg:left-auto w-full lg:w-auto  
            lg:bg-transparent p-4 lg:p-0 space-y-4 lg:space-y-0 lg:items-center lg:space-x-8 shadow-lg lg:shadow-none`}
         >
           <ul
@@ -68,7 +68,7 @@ export default function Index() {
           "
           >
             <Link to="/pricing">Pricing</Link>
-            <Link to="/product">product</Link>
+            <Link to="/product">Product</Link>
             <Link to="/Learn More">Learn More</Link>
           </ul>
           <div className="login flex flex-col md:flex-row gap-4 flex-wrap">

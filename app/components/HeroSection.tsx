@@ -49,14 +49,11 @@ function HeroSection({
   onSubmit,
 }: HeroSectionProps) {
   return (
-    <div
-      className="hero-section grid md:grid-cols-2 mt-4 border-2 border-rose-600"
-      id="hero"
-    >
+    <div className="hero-section grid md:grid-cols-2 mt-4 " id="hero">
       {/* Hero section content */}
-      <Card>
-        <Card.Body>
-          <h1 className="text-3xl md:text-5xl font-bold text-blue-600">
+      <Card className=" content-center">
+        <Card.Body className=" flex flex-col justify-center items-center gap-4">
+          <h1 className="text-3xl md:text-5xl font-bold text-blue-600  leading-normal md:leading-relaxed">
             {title}
           </h1>
           <p className="text-center md:text-start text-md">{description}</p>
