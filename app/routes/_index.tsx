@@ -1,7 +1,8 @@
 import type { MetaFunction } from "@remix-run/node";
 import * as React from "react";
 import { Link } from "@remix-run/react";
-import { Container, Header, Content, Footer, Button, Form, Card } from "rsuite";
+import { Container, Header, Content, Footer, Button } from "rsuite";
+import HeroSection from "~/components/HeroSection";
 import { Menu, X } from "lucide-react";
 export const meta: MetaFunction = () => {
   return [
@@ -22,6 +23,16 @@ export default function Index() {
   // Function to toggle the menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleFormSubmit = (
+    formValue: Record<string, []> | null,
+    event?: React.FormEvent<HTMLFormElement>
+  ): void => {
+    if (event) {
+      event.preventDefault();
+    }
+    console.log("Form submitted!", formValue);
   };
 
   return (
@@ -88,64 +99,12 @@ export default function Index() {
 
       <Content>
         {/* Hero section */}
-        <div className="hero-section grid md:grid-cols-2 mt-4" id="hero">
-          {/* Hero section write up */}
-
-          <Card
-            className="text-hero
-          flex flex-col items-center justify-center gap-4
-          "
-          >
-            <Card.Body>
-              <h1
-                className="text-3xl md:text-5xl font-bold text-blue-600 
-              text-center
-              md:text-start
-              md:leading-relaxed mb-4"
-              >
-                Manage your projects with ease, in real-time.
-              </h1>
-
-              <p className="text-center md:text-start text-md">
-                Whether you're managing a personal project or leading a team,
-                Werk makes it easy to get the job done. Werk lets you use simple
-                drag-and-drop techniques for creating, managing, and tracking
-                all your projects.
-              </p>
-
-              {/* Form action */}
-              <Form
-                method="post"
-                action=""
-                className="w-full flex flex-col md:flex-row md:justify-between
-                items-center
-               gap-2 align-start mt-6"
-              >
-                <Form.Group controlId="email">
-                  <Form.Control
-                    name="email"
-                    type="email"
-                    placeholder="jondoe@gomail.com"
-                    className="md:min-w-96 p-4 rounded-full border-blue-600 
-                    dark:border-none
-                    dark:text-gray-200"
-                  />
-                </Form.Group>
-                <Button
-                  type="submit"
-                  className="w-36  bg-blue-700 p-4 rounded-full"
-                >
-                  Get Started
-                </Button>
-              </Form>
-            </Card.Body>
-          </Card>
-
-          {/* Hero-section image right container */}
-          <div className="image-hero">
-            <img src="/public/Illustration-hero.png" alt="" />
-          </div>
-        </div>
+        <HeroSection
+          title="Manage your projects with ease, in real-time."
+          description="Whether you're managing a personal project or leading a team, Werk makes it easy to get the job done. Werk lets you use simple drag-and-drop techniques for creating, managing, and tracking all your projects."
+          imageSrc="/public/heroImage.png"
+          onSubmit={handleFormSubmit}
+        />
 
         {/* Features section */}
         <div className="flex flex-col items-center justify-center h-screen">
