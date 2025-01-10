@@ -1,9 +1,11 @@
 import type { MetaFunction } from "@remix-run/node";
 import * as React from "react";
 import { Link } from "@remix-run/react";
-import { Container, Header, Content, Footer, Button } from "rsuite";
+import { Container, Header, Content, Footer, Button, Toggle } from "rsuite";
 import HeroSection from "~/components/HeroSection";
 import { Menu, X } from "lucide-react";
+import Steps from "~/components/Steps";
+import BriefSection from "~/components/BriefSection";
 export const meta: MetaFunction = () => {
   return [
     { logo: "/favicon.ico" },
@@ -36,8 +38,8 @@ export default function Index() {
   };
 
   return (
-    <Container className="grid md:mx-16  mx-2">
-      <Header className="flex items-center  flex-wrap md:gap-6 mt-4 justify-between ">
+    <Container className="grid">
+      <Header className="flex items-center mx-4 md:mx-16  flex-wrap md:gap-6 mt-4 justify-between ">
         <img src="/public/logo.png" alt="" className="w-32 md:w-52" />
 
         {/* Hamburger Menu Button - Only visible on mobile */}
@@ -56,14 +58,17 @@ export default function Index() {
         <div
           className={`${
             isMenuOpen ? "flex" : "hidden"
-          } lg:flex flex-col lg:flex-row absolute lg:relative top-16 lg:top-0 left-0 lg:left-auto w-full lg:w-auto  
-           lg:bg-transparent p-4 lg:p-0 space-y-4 lg:space-y-0 lg:items-center lg:space-x-8 shadow-lg lg:shadow-none`}
+          } lg:flex flex-col lg:flex-row absolute lg:relative top-16 lg:top-0 left-0 lg:left-auto w-full mx-4 lg:w-auto  
+           lg:bg-transparent p-4 lg:p-0 space-y-4 lg:space-y-0 lg:items-center lg:space-x-8 
+           bg-gray-500 
+           shadow-lg lg:shadow-none`}
         >
+          <Toggle></Toggle>
           <ul
             className="flex  flex-col md:flex-row space-x-4 list-none flex-wrap flex-1 items-center justify-end 
             text-lg
             gap-4
-          text-gray-600 
+          text-gray-00 
           md:text-white
           "
           >
@@ -106,11 +111,26 @@ export default function Index() {
           onSubmit={handleFormSubmit}
         />
 
-        {/* Features section */}
-        <div className="flex flex-col items-center justify-center h-screen">
-          <h1 className=" font-bold">Welcome to WERK</h1>
-          <p className="text-2xl">The best place to find jobs</p>
+        {/*Brainstorm  */}
+
+        <Steps />
+
+        {/* Boost section */}
+        <div className="w-full grid gap-8 items-center justify-center bg-primary my-2 md:p-12 lg:p-24">
+          <h2 className="text-2xl my-4  text-center text-wrap md:my-0 md:text-4xl lg:text-5xl font-bold md:leading-relaxed  ">
+            Boost productivity {<br />} with soft
+            <span className="text-accent"> werk</span>
+          </h2>
+
+          <p className=" text-sm text-center text-wrap mb-4 md:mb-0 md:text-2xl lg:text-3xl">
+            Review your projects, organize them into lists and sprints, and
+            {<br />}
+            break them down into smaller tasks
+          </p>
         </div>
+
+        {/* Organization info section */}
+        <BriefSection />
       </Content>
       <Footer>
         <div className="flex items-center justify-center">
