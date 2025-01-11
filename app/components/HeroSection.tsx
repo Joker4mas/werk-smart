@@ -25,7 +25,7 @@ const HeroForm = ({
   <Form
     method="post"
     onSubmit={onSubmit}
-    className="w-full flex flex-col md:flex-row md:justify-between items-center gap-2 align-start mt-6"
+    className="min-w-min md:w-full flex flex-col md:flex-row md:justify-evenly items-center gap-2 align-start mt-6"
   >
     <Form.Group controlId="email">
       <Form.Control
@@ -36,7 +36,7 @@ const HeroForm = ({
         required
       />
     </Form.Group>
-    <Button type="submit" className="w-36 bg-blue-700 p-4 rounded-full">
+    <Button type="submit" className="w-42 bg-blue-700 p-4 rounded-full">
       Get Started
     </Button>
   </Form>

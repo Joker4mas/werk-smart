@@ -12,6 +12,7 @@ export default {
         secondary: "#E5E7EB",
         accent: "#F59E0B",
         dark: "#111827",
+        grayishBlue: "hsl(230, 38%, 97%)",
       },
     },
   },

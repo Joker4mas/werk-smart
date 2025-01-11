@@ -3,7 +3,7 @@ import { Button, Card, VStack } from "rsuite";
 import { ArrowRight } from "lucide-react";
 function BriefSection() {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center mx-2 md:mx-12 ">
       {/* // Card component with the image and brief description of the Brief
       Section. */}
       <Card className="grid grid-flow-row grid-cols-1 md:grid-cols-2 gap-4 p-4 justify-center ">
@@ -24,7 +24,7 @@ function BriefSection() {
             <p
               className="text-sm
             text-center text-wrap 
-            md:text-start
+            md:text-start 
             md:text-lg mb-4 md:mb-8"
             >
               Collaborate with your team and track the progress of every project
@@ -40,13 +40,7 @@ function BriefSection() {
             </Button>
           </Card.Body>
         </VStack>
-        <img
-          src="/public/aboutHome.png"
-          alt="Shadow"
-          //   width={400}
-          //   height={1200}
-          //   style={{ objectFit: "cover" }}
-        />
+        <img src="/public/aboutHome.png" alt="Shadow" className="" />
       </Card>
     </div>
   );

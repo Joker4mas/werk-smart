@@ -1,11 +1,22 @@
 import type { MetaFunction } from "@remix-run/node";
 import * as React from "react";
 import { Link } from "@remix-run/react";
-import { Container, Header, Content, Footer, Button, Toggle } from "rsuite";
+import {
+  Container,
+  Header,
+  Content,
+  Footer,
+  Button,
+  Toggle,
+  Divider,
+} from "rsuite";
 import HeroSection from "~/components/HeroSection";
 import { Menu, X } from "lucide-react";
 import Steps from "~/components/Steps";
 import BriefSection from "~/components/BriefSection";
+import Share from "~/components/ShareSection";
+import Sponsors from "~/components/Sponsors";
+import SignUpContainer from "~/components/SignUpContainer";
 export const meta: MetaFunction = () => {
   return [
     { logo: "/favicon.ico" },
@@ -131,12 +142,20 @@ export default function Index() {
 
         {/* Organization info section */}
         <BriefSection />
+
+        {/* Share section */}
+        <Share />
+
+        {/* Team sponsors */}
+        <Sponsors />
+
+        {/* sign-up container */}
+        <SignUpContainer />
       </Content>
-      <Footer>
-        <div className="flex items-center justify-center">
-          <p className="text-2xl">Footer</p>
-        </div>
-      </Footer>
+
+      <Divider className="border border-gray-400 " />
+
+      <Footer />
     </Container>
   );
 }
