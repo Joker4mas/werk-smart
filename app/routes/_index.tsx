@@ -17,6 +17,7 @@ import BriefSection from "~/components/BriefSection";
 import Share from "~/components/ShareSection";
 import Sponsors from "~/components/Sponsors";
 import SignUpContainer from "~/components/SignUpContainer";
+import FooterBase from "~/components/Footer";
 export const meta: MetaFunction = () => {
   return [
     { logo: "/favicon.ico" },
@@ -153,9 +154,8 @@ export default function Index() {
         <SignUpContainer />
       </Content>
 
-      <Divider className="border border-gray-400 " />
-
-      <Footer />
+      <Divider className="text-gray-400" />
+      <FooterBase />
     </Container>
   );
 }
