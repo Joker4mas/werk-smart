@@ -1,16 +1,8 @@
 import type { MetaFunction } from "@remix-run/node";
 import * as React from "react";
 import { Link } from "@remix-run/react";
-import {
-  Container,
-  Header,
-  Content,
-  Footer,
-  Button,
-  Toggle,
-  Divider,
-} from "rsuite";
-import HeroSection from "~/components/HeroSection";
+import { Container, Header, Content, Button, Toggle, Divider } from "rsuite";
+import Hero from "~/components/HeroSection";
 import { Menu, X } from "lucide-react";
 import Steps from "~/components/Steps";
 import BriefSection from "~/components/BriefSection";
@@ -108,7 +100,7 @@ export default function Index() {
               md:mx-0
             "
             >
-              <Link to="/registration">Get Started</Link>
+              <Link to="/signup">Get Started</Link>
             </Button>
           </div>
         </div>
@@ -116,7 +108,7 @@ export default function Index() {
 
       <Content>
         {/* Hero section */}
-        <HeroSection
+        <Hero
           title="Manage your projects with ease, in real-time."
           description="Whether you're managing a personal project or leading a team, Werk makes it easy to get the job done. Werk lets you use simple drag-and-drop techniques for creating, managing, and tracking all your projects."
           imageSrc="/public/heroImage.png"
