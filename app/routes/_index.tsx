@@ -1,7 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import * as React from "react";
 import { Link } from "@remix-run/react";
-import { Container, Header, Content, Button, Toggle, Divider } from "rsuite";
+import { Container, Header, Content, Button, Divider } from "rsuite";
 import Hero from "~/components/HeroSection";
 import { Menu, X } from "lucide-react";
 import Steps from "~/components/Steps";
@@ -67,7 +67,6 @@ export default function Index() {
            bg-gray-500 
            shadow-lg lg:shadow-none`}
         >
-          <Toggle></Toggle>
           <ul
             className="flex  flex-col md:flex-row space-x-4 list-none flex-wrap flex-1 items-center justify-end 
             text-lg

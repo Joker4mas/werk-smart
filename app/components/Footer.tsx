@@ -37,11 +37,21 @@ function Footer() {
         {/* socials footer */}
         <div className="product grid grid-flow-col md:grid-flow-row gap-4 ">
           <div className="flex mt-4 md:mt-0 justify-between">
-            <FaLinkedin />
-            <FaFacebook />
-            <FaTwitter />
-            <FaInstagram />
-            <FaYoutube />
+            <Link to="/">
+              <FaLinkedin />
+            </Link>
+            <Link to="/">
+              <FaFacebook />
+            </Link>
+            <Link to="/">
+              <FaTwitter />
+            </Link>
+            <Link to="/">
+              <FaInstagram />
+            </Link>
+            <Link to="/">
+              <FaYoutube />
+            </Link>
           </div>
         </div>
       </div>
