@@ -12,14 +12,18 @@ import {
   LuMoveRight,
   LuSearch,
   LuChevronDown,
+  LuChevronLeft
 } from "react-icons/lu";
 import { Link } from "@remix-run/react";
 import { TbUsersGroup } from "react-icons/tb";
+import {  Divider } from "rsuite";
 
 function dashboard() {
+  
+
   return (
-    <div className="bg-gray-100 text-black">
-      <div className="grid-Container grid grid-flow-col auto-cols-max ">
+    <div className="main-container grid grid-cols-5  text-black bg-slate-200">
+      
         {/* Example: <Sidebar /> */}
         <div className="side-bar  bg-primary p-4  text-white max-w-fit">
           <div className="sideBar-logo">
@@ -111,7 +115,7 @@ function dashboard() {
 
               {/* Logout link and icon */}
               <Link
-                to="#"
+                to="/"
                 className="flex items-center gap-3 active:text-orange-300 active:delay-75 mt-4"
               >
                 <LuLogOut size={25} /> Logout
@@ -121,70 +125,224 @@ function dashboard() {
         </div>
 
         {/* Add your dashboard layout here */}
-        <div className="grid max-w-full text-center border-2 border-orange-300 h-52">
+        <div className="col-start-2 col-end-6 px-4">
           <div
-            className="top-grid w-full grid
-          grid-cols-3 row-auto auto-cols-fr justify-between
-         border-2 border-rose-700  p-2"
+            className="top-grid  max-h-24  mt-2 shadow-md"
           >
-            <div className="welcome-note  grid items-center place-content-center gap-2">
-              <span className="text-xl font-bold ">Welcome Back, John</span>
-              <Link
-                to="#"
-                className="resume-link  flex
-              items-center gap-2"
-              >
-                Resume where you left off?
-                <LuMoveRight className="active:text-orange-400" />
-              </Link>
-            </div>
-            <div className="grid-headerDash grid grid-cols-2 gap-8 justify-between items-center  mx-auto ">
-              <LuSearch size="32" />
-              <div className="notification relative">
-                <LuBell size={32} />
-                <div className="dot 
-                w-2 h-2 bg-rose-600
-                absolute top-0 
-                left-5 rounded-full border-2 border-rose-600">&nbsp;</div>
+            <div className="flex--container grid grid-flow-col p-4">
+  
+              {/* Welcome header text */}
+              <div className="welcome-note  grid 
+              items-center gap-2">
+                <span className="text-xl font-bold ">Welcome Back, John</span>
+                <Link
+                  to="#"
+                  className="resume-link  flex
+                items-center gap-2"
+                >
+                  Resume where you left off?
+                  <LuMoveRight className="active:text-orange-400" />
+                </Link>
               </div>
-            </div>
-            <div className="profile-im flex items-center gap-10 p-2 ">
-              <img src="/public/user1.png" alt="user one" className="w-16 rounded-full " />
-              <div className="user--details grid grid-flow-row text-start">
-                <span className="font-bold">John Doe</span>
-                <div className="profile flex items-center gap-8">
-                  <span className=" text-gray-400">jogndoe@gmail.com
-                  </span>
-                                <LuChevronDown size={24}/>
+  
+              {/* Search and notification */}
+              <div className="right-header flex justify-between items-center gap-24">
+                <div className="grid-headerDash grid grid-cols-2 gap-4 justify-between items-center  mx-auto ">
+                  <LuSearch size="32" className="cursor-pointer"/>
+                  <div className="notification relative">
+                    <LuBell size={32} />
+                    <div className="dot
+                    w-2 h-2 bg-rose-600
+                    absolute top-0
+                    left-5 rounded-full border-2 border-rose-600">&nbsp;</div>
+                  </div>
                 </div>
-              </div>
+                {/* User profile */}
+                <div className="profile-im flex items-center gap-8 ">
+                  <img src="/public/user1.png" alt="user one" className="w-10 rounded-full " />
+                  <div className="user--details grid grid-flow-row text-start">
+                    <span className="font-bold">John Doe</span>
+                    <div className="profile flex items-center gap-8">
+                      <span className=" text-gray-400">jogndoe@gmail.com
+                      </span>
+                                    <LuChevronDown size={24} className="cursor-pointer"/>
+                    </div>
+                  </div>
+                </div>
+</div>
             </div>
           </div>
-          <div className="bg-green-300">
-            <h1>Dashboard</h1>
-            <p>This is the dashboard page</p>
-            <div className="col-span-12">
-              {/* Add your dashboard content here */}
-              <h1>Dashboard</h1>
-              <p>Welcome to your Werk Remit dashboard!</p>
-              <div className="flex items-center justify-between gap-4">
-                <h2>Total Projects</h2>
-                <span>12</span>
-              </div>
-            </div>
+
+          {/* Dashboard content */}
+          <div className="grid mt-8  ">
+          {/* flex-grid container for charts*/}
+      <div className="flex flex-row justify-between max-w-full " id="charts">
+        {/* Task overview board */}
+      <div className="task--overview flex flex-col shadow-md  gap-2 rounded-lg w-64 h-40 ">
+      <div className="top--text flex gap-2 text-left relative ">
+        <p className="font-bold uppercase text-md">Task overview</p> <span className="text-sm text-gray-400 absolute bottom-0 translate-x-36">Today</span>
+      </div>
+        <div className="card-chart mx-auto">
+          <div className="circle rounded-full inline-flex w-24 h-24 items-center text-center justify-center flex-col  border-2 border-gray-400">
+            <p className="text-2xl font-bold">50%</p>
+            <span className="text-sm text-gray-400">completed</span>
           </div>
         </div>
-        {/* Example: <Header /> */}
-
-        {/* Example: <Content /> */}
-        {/* Example: <Footer /> */}
-        {/* Example: <ProjectLinkst /> */}
-        {/* Example: <ProjectForm /> */}
-        {/* Example: <ProjectDetails /> */}
-        {/* Example: <TaskCalendar /> */}
-        {/* Example: <ProjectSettings /> */}
+      <div className="right--bottom-text flex items-end relative "><span className="flex gap-2 items-center  absolute translate-x-36 translate-y-4 mt-2 text-sm text-gray-400 bottom-0">View details <LuMoveRight /></span></div>
       </div>
+
+
+      {/* right-grid-box */}
+      <div className="overview flex flex-col gap-4  h-40 p-4 rounded-lg shadow-md">
+        <div className="top--text text-left ">Overall project overview</div>
+        <div className="project--progress border ">
+          <ul className="grid grid-flow-col-dense  gap-8 place-content-center place-items-center">
+            <li className="grid place-content-center">
+            <span className="number font-bold text-4xl text-center">12</span>
+            <p className="my-1 text-gray-400">Upcoming</p>
+            </li>
+            <Divider className="border h-10 w-0 border-gray-400" />
+            <li className="grid place-content-center">
+            <span className="number font-bold text-4xl text-center">3</span>
+            <p className="my-1 text-gray-400">In Progress</p>
+            </li>
+            <Divider className="border h-10 w-0 border-gray-400" />
+            <li className="grid place-content-center">
+            <span className="number font-bold text-4xl text-center">1</span>
+            <p className="my-1 text-gray-400">Under Review</p>
+            </li>
+<Divider className="border h-10 w-0 border-gray-400" />
+            <li className="grid place-content-center">
+            <span className="number font-bold text-4xl text-center">4
+            </span>
+            <p className="my-1 text-gray-400">Completed</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>  
+          </div>
+
+
+            {/* Calender, Task and Testimonials */}
+          <div className="calender--testimonial grid   border-2 border-green-600">
+           {/* calender and task section */}
+            <div className="grid mt-8 border-2 border-rose-600 ">
+            {/* flex-grid container for charts*/}
+                  <div className="flex flex-row justify-between max-w-full gap-4 " id="charts">
+                   
+                   
+                    {/* Task & Calender */}
+                  <div className="task--overview grid shadow-md gap-4 rounded-md border-2 border-orange-500">
+                  
+                  <div className="calender">
+                    <div className="mont-year p-2 max-w-max">
+                      <div className="month-year flex mb-4 justify-between">
+                        <p className="text-xl font-bold">March 2023</p>
+                      <div className="right-aligned flex gap-4">
+                        <div className="prev-month cursor-pointer">
+                          <LuChevronLeft size={24} />
+                        </div>
+                        <div className="next-month cursor-pointer">
+                          <LuChevronRight  size={24}/>
+                        </div>
+                      </div>
+                      </div>
+
+                      {/* week days */}
+                      <div className="days">
+                        <ul className="grid grid-cols-7 gap-6">
+                          <li className="grid gap-2 place-items-center place-content-center">
+                            <span className="text-md text-gray-400">Sun</span>
+                            <span>5
+
+                            </span>
+                          </li>
+                          <li className="grid gap-2 place-items-center place-content-center">
+                            <span className="text-md text-gray-400">Mon</span>
+                            <span>6
+
+                            </span>
+                          </li>
+                          <li className="grid gap-2 place-items-center place-content-center">
+                            <span className="text-md text-gray-400">Tues</span>
+                            <span>7
+
+                            </span>
+                          </li>
+                          <li className="grid gap-2 place-items-center place-content-center">
+                            <span className="text-md text-gray-400">Wed</span>
+                            <span className="bg-blue-700 text-white rounded-full w-8 p-1   text-center shadow-lg">43
+
+                            </span>
+                          </li>
+                          <li className="grid gap-2 place-items-center place-content-center">
+                            <span className="text-md text-gray-400">Thu</span>
+                            <span>9
+
+                            </span>
+                          </li>
+                          <li className="grid gap-2 place-items-center place-content-center">
+                            <span className="text-md text-gray-400">Fri</span>
+                            <span>10
+
+                            </span>
+                          </li>
+                          <li className="grid gap-2 place-items-center place-content-center">
+                            <span className="text-md text-gray-400">Sat</span>
+                            <span>11
+
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="task-container"></div>
+                  </div>
+                  <div className="tasks h-32 w-56 bg-rose-200">
+
+                  </div>
+                 
+              
+                  </div>
+            
+            
+                  {/* right-grid-box */}
+                  <div className="overview flex flex-col gap-4  h-52 p-4">
+                    <div className="top--text text-left">Overall project overview</div>
+                    <div className="project--progress shadow-md p-4">
+            <ul className="flex flex-row gap-6 place-content-center place-items-center">
+              <li className="">
+              <span className="number font-bold text-4xl">12</span>
+              <p className="my-1 text-gray-400">Upcoming</p>
+              </li>
+              <Divider className="border h-10 w-0 border-gray-400" />
+              <li>
+              <span className="number font-bold text-4xl">3</span>
+              <p className="my-1 text-gray-400">In Progress</p>
+              </li>
+              <Divider className="border h-10 w-0 border-gray-400" />
+              <li>
+              <span className="number font-bold text-4xl">1</span>
+              <p className="my-1 text-gray-400">Under Review</p>
+              </li>
+            <Divider className="border h-10 w-0 border-gray-400" />
+              <li>
+              <span className="number font-bold text-4xl">4
+              </span>
+              <p className="my-1 text-gray-400">Completed</p>
+              </li>
+            </ul>
+                    </div>
+                  </div>
+                  </div>
+            </div>
+            
+         
+          </div>
+        </div>
     </div>
+
   );
 }
 
