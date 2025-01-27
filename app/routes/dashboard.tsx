@@ -12,8 +12,12 @@ import {
   LuMoveRight,
   LuSearch,
   LuChevronDown,
-  LuChevronLeft
+  LuChevronLeft,LuLink2
 } from "react-icons/lu";
+import ProgBars from '../components/ProgBar';
+import { GiSandsOfTime } from "react-icons/gi";
+import { LiaComments } from "react-icons/lia";
+import { PiTimerLight } from "react-icons/pi";
 import { Link } from "@remix-run/react";
 import { TbUsersGroup } from "react-icons/tb";
 import {  Divider } from "rsuite";
@@ -183,10 +187,7 @@ function dashboard() {
         <p className="font-bold uppercase text-md">Task overview</p> <span className="text-sm text-gray-400 absolute bottom-0 translate-x-36">Today</span>
       </div>
         <div className="card-chart mx-auto">
-          <div className="circle rounded-full inline-flex w-24 h-24 items-center text-center justify-center flex-col  border-2 border-gray-400">
-            <p className="text-2xl font-bold">50%</p>
-            <span className="text-sm text-gray-400">completed</span>
-          </div>
+          <ProgBars progress={50} text="Completed"/>
         </div>
       <div className="right--bottom-text flex items-end relative "><span className="flex gap-2 items-center  absolute translate-x-36 translate-y-4 mt-2 text-sm text-gray-400 bottom-0">View details <LuMoveRight /></span></div>
       </div>
@@ -272,7 +273,7 @@ function dashboard() {
                           </li>
                           <li className="grid gap-2 place-items-center place-content-center">
                             <span className="text-md text-gray-400">Wed</span>
-                            <span className="bg-blue-700 text-white rounded-full w-8 p-1   text-center shadow-lg">43
+                            <span className="bg-blue-800 text-white rounded-full w-8 p-1   text-center shadow-lg">43
 
                             </span>
                           </li>
@@ -297,12 +298,67 @@ function dashboard() {
                         </ul>
                       </div>
                     </div>
-                    <div className="task-container"></div>
-                  </div>
-                  <div className="tasks h-32 w-56 bg-rose-200">
+                    <div className="task-container border-2 border-blue-700 rounded-lg  grid grid-cols-5 mt-4">
+                    <div className="right-icon">
+                        <LuNotepadText size={46} className="text-blue-800 text-center mx-1"/>
+                      </div>
+                      <div className="notification grid col-start-2 col-end-5 place-content-between">
+                        <p className="font-bold">Design Hero Section</p>
+                        <ul className="flex gap-2 my-2">
+                          <li className="flex items-center">
+                            <PiTimerLight /> <span className="text-sm">9.am</span>
+                          </li>
+                          <li className="flex items-center gap-1">
+                            <GiSandsOfTime /> <span className="text-sm">2 hrs</span>
 
+                          </li>
+                          <li className="flex items-center gap-1">
+                            <LuLink2 /> <span className="text-sm">www.figma.com</span>
+                          </li>
+                          <li className="flex items-center gap-1">
+                            <LiaComments /> <span className="text-sm">5 comments</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="lapsed-time">
+                   
+              <ProgBars progress={20} text="time left"/>
+                      </div>
+                      
+                    </div>
+
+                    <div className="task-container border-2 border-blue-700 rounded-lg  grid grid-cols-6 mt-4">
+                    <div className="right-icon">
+                        <LuNotepadText size={46} className="text-blue-800 text-center mx-1 "/>
+                      </div>
+                      <div className="notification grid col-start-2 col-end-6 place-content-between">
+                        <p className="font-bold">Design Hero Section</p>
+                        <ul className="flex gap-2 my-2">
+                          <li className="flex items-center">
+                            <PiTimerLight /> <span className="text-sm">9.am</span>
+                          </li>
+                          <li className="flex items-center gap-1">
+                            <GiSandsOfTime /> <span className="text-sm">2 hrs</span>
+
+                          </li>
+                          <li className="flex items-center gap-1">
+                            <LuLink2 /> <span className="text-sm">www.figma.com</span>
+                          </li>
+                          <li className="flex items-center gap-1">
+                            <LiaComments /> <span className="text-sm">5 comments</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="lapsed-time grid items-center border-2 border-green-700">
+                   <div className="flex gap-2  bg-blue-700 p-2  rounded-lg text-white items-center">
+                     <PiTimerLight /><span>Reminders</span>
+                   </div>
+
+                      </div>
+                      
+                    </div>
                   </div>
-                 
+              
               
                   </div>
             
@@ -310,30 +366,7 @@ function dashboard() {
                   {/* right-grid-box */}
                   <div className="overview flex flex-col gap-4  h-52 p-4">
                     <div className="top--text text-left">Overall project overview</div>
-                    <div className="project--progress shadow-md p-4">
-            <ul className="flex flex-row gap-6 place-content-center place-items-center">
-              <li className="">
-              <span className="number font-bold text-4xl">12</span>
-              <p className="my-1 text-gray-400">Upcoming</p>
-              </li>
-              <Divider className="border h-10 w-0 border-gray-400" />
-              <li>
-              <span className="number font-bold text-4xl">3</span>
-              <p className="my-1 text-gray-400">In Progress</p>
-              </li>
-              <Divider className="border h-10 w-0 border-gray-400" />
-              <li>
-              <span className="number font-bold text-4xl">1</span>
-              <p className="my-1 text-gray-400">Under Review</p>
-              </li>
-            <Divider className="border h-10 w-0 border-gray-400" />
-              <li>
-              <span className="number font-bold text-4xl">4
-              </span>
-              <p className="my-1 text-gray-400">Completed</p>
-              </li>
-            </ul>
-                    </div>
+                     
                   </div>
                   </div>
             </div>
