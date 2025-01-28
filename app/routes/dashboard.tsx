@@ -226,17 +226,17 @@ function dashboard() {
 
 
             {/* Calender, Task and Testimonials */}
-          <div className="calender--testimonial grid   border-2 border-green-600">
+          <div className="calender--testimonial grid ">
            {/* calender and task section */}
-            <div className="grid mt-8 border-2 border-rose-600 ">
+            <div className="grid mt-8 ">
             {/* flex-grid container for charts*/}
                   <div className="flex flex-row justify-between max-w-full gap-4 " id="charts">
                    
                    
                     {/* Task & Calender */}
-                  <div className="task--overview grid shadow-md gap-4 rounded-md border-2 border-orange-500">
+                  <div className="task--overview grid shadow-md gap-4 rounded-lg ">
                   
-                  <div className="calender">
+                  <div className="calender p-2">
                     <div className="mont-year p-2 max-w-max">
                       <div className="month-year flex mb-4 justify-between">
                         <p className="text-xl font-bold">March 2023</p>
@@ -298,7 +298,7 @@ function dashboard() {
                         </ul>
                       </div>
                     </div>
-                    <div className="task-container border-2 border-blue-700 rounded-lg  grid grid-cols-5 mt-4">
+                    <div className="task-container border-2 border-blue-700 rounded-lg  grid grid-cols-5 mt-4 p-2">
                     <div className="right-icon">
                         <LuNotepadText size={46} className="text-blue-800 text-center mx-1"/>
                       </div>
@@ -322,12 +322,12 @@ function dashboard() {
                       </div>
                       <div className="lapsed-time">
                    
-              <ProgBars progress={20} text="time left"/>
+              <ProgBars progress={20} text=" left"/>
                       </div>
                       
                     </div>
 
-                    <div className="task-container border-2 border-blue-700 rounded-lg  grid grid-cols-6 mt-4">
+                    <div className="task-container border-2 border-blue-700 rounded-lg  grid grid-cols-6 mt-4 p-2">
                     <div className="right-icon">
                         <LuNotepadText size={46} className="text-blue-800 text-center mx-1 "/>
                       </div>
@@ -349,7 +349,7 @@ function dashboard() {
                           </li>
                         </ul>
                       </div>
-                      <div className="lapsed-time grid items-center border-2 border-green-700">
+                      <div className="lapsed-time grid items-center">
                    <div className="flex gap-2  bg-blue-700 p-2  rounded-lg text-white items-center">
                      <PiTimerLight /><span>Reminders</span>
                    </div>
@@ -364,8 +364,32 @@ function dashboard() {
             
             
                   {/* right-grid-box */}
-                  <div className="overview flex flex-col gap-4  h-52 p-4">
-                    <div className="top--text text-left">Overall project overview</div>
+                  <div className="grid border-2 border-green-600 w-56">
+                    <div className="top--text flex justify-between items-center"><p className="text-xl font-bold">Activity </p>
+                    <div className="dots flex gap-1 font-bold ">
+                      <span className="border-2 border-gray-500 rounded-full  p-0.5 hover:cursor-pointer hover:border-blue-700"></span>
+                      <span className="border-2 border-gray-500 rounded-full p-0.5 hover:cursor-pointer hover:border-blue-700"></span>
+                      <span className="border-2 border-gray-500 rounded-full p-0.5 hover:cursor-pointer hover:border-blue-700"></span>
+                      </div>
+                    </div>
+
+                    <div className="test-monial">
+                      <div className="floyd">
+                        <div className="profile-floyd flex items-center gap-4">
+                          <div className="wrapper relative">
+                            <img src="/public/user2.png" alt="floyd's" className="w-16 rounded-full"/>
+                            <div className="absolute right-0 bottom-1 bg-slate-50 rounded-full p-1">
+                              <LuLink2  />
+                            </div>
+                            </div>
+                          <div className="profile-details grid gap-2">
+                            <p className="font-bold text-sm">Floyd Miles</p>
+                            <span className="text-gray-400 text-sm">Today, 9.46 Am</span>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
                      
                   </div>
                   </div>
