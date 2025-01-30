@@ -1,0 +1,29 @@
+import Sponsors from "~/components/Sponsors";
+import Header from "../components/Header";
+import PriceCard from "../components/PriceCard";
+import FooterBase from "../components/Footer";
+import Faqs from "~/components/Faqs";
+
+const sponsorData = [
+  { name: "Spotify", logo: "/public/Vector-sportify.png" },
+  { name: "Microsoft", logo: "/public/microsoft.png" },
+  { name: "SpaceX", logo: "/public/spacex.png" },
+  { name: "PiggyVest", logo: "/public/piggyvest.png" },
+  { name: "Opera", logo: "/public/opera.png" },
+];
+function price() {
+  return (
+    <>
+      <Header />
+      <PriceCard />
+      <Sponsors
+        title="Loved by 100,000+ organizations across the globe"
+        sponsors={sponsorData}
+      />
+      <Faqs />
+      <FooterBase />
+    </>
+  );
+}
+
+export default price;

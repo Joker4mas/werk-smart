@@ -14,7 +14,6 @@ import {
   LuChevronDown,
   LuChevronLeft,
   LuLink2,
-  LuFigma,
 } from "react-icons/lu";
 import ProgBars from "../components/ProgBar";
 import { GiSandsOfTime } from "react-icons/gi";
