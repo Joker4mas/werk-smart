@@ -8,7 +8,7 @@ function Share() {
         {/* // Card component with the image and brief description of the Brief
       Section. */}
         <Card className="grid grid-flow-row grid-cols-1 md:grid-cols-2 gap-4 p-4 justify-center ">
-          <img src="./public/collab.png" alt="Diagram sharing" />
+          <img src="../public/collab.png" alt="Diagram sharing" />
           <VStack
             spacing={2}
             className="flex flex-col items-center justify-center mb-4 md:mb-0"
