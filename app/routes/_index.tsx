@@ -17,11 +17,11 @@ export const meta: MetaFunction = () => {
 };
 
 const sponsorData = [
-  { name: "Spotify", logo: "/public/Vector-sportify.png" },
-  { name: "Microsoft", logo: "/public/microsoft.png" },
-  { name: "SpaceX", logo: "/public/spacex.png" },
-  { name: "PiggyVest", logo: "/public/piggyvest.png" },
-  { name: "Opera", logo: "/public/opera.png" },
+  { name: "Spotify", logo: "../public/Vector-sportify.png" },
+  { name: "Microsoft", logo: "../public/microsoft.png" },
+  { name: "SpaceX", logo: "../public/spacex.png" },
+  { name: "PiggyVest", logo: "../public/piggyvest.png" },
+  { name: "Opera", logo: "../public/opera.png" },
 ];
 
 export default function Index() {
@@ -44,7 +44,7 @@ export default function Index() {
         <Hero
           title="Manage your projects with ease, in real-time."
           description="Whether you're managing a personal project or leading a team, Werk makes it easy to get the job done. Werk lets you use simple drag-and-drop techniques for creating, managing, and tracking all your projects."
-          imageSrc="/public/heroImage.png"
+          imageSrc="./public/heroImage.png"
           onSubmit={handleFormSubmit}
         />
 

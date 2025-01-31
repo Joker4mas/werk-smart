@@ -40,7 +40,7 @@ function BriefSection() {
             </Button>
           </Card.Body>
         </VStack>
-        <img src="/public/aboutHome.png" alt="Shadow" className="" />
+        <img src="../public/aboutHome.png" alt="Shadow" className="" />
       </Card>
     </div>
   );
