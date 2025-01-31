@@ -1,7 +1,5 @@
 import Sponsors from "~/components/Sponsors";
-import Header from "../components/Header";
 import PriceCard from "../components/PriceCard";
-import FooterBase from "../components/Footer";
 import Faqs from "~/components/Faqs";
 
 const sponsorData = [
@@ -14,14 +12,12 @@ const sponsorData = [
 function price() {
   return (
     <>
-      <Header />
       <PriceCard />
       <Sponsors
         title="Loved by 100,000+ organizations across the globe"
         sponsors={sponsorData}
       />
       <Faqs />
-      <FooterBase />
     </>
   );
 }

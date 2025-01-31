@@ -11,7 +11,9 @@ const Header = () => {
 
   return (
     <header className="flex items-center mx-4 md:mx-16 flex-wrap md:gap-6 mt-4 justify-between">
-      <img src="/logo.png" alt="Logo" className="w-32 md:w-52" />
+      <Link to="/">
+        <img src="/logo.png" alt="Logo" className="w-32 md:w-52" />
+      </Link>
 
       {/* Hamburger Menu Button - Only visible on mobile */}
       <button

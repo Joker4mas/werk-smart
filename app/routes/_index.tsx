@@ -7,8 +7,7 @@ import BriefSection from "~/components/BriefSection";
 import Share from "~/components/ShareSection";
 import Sponsors from "~/components/Sponsors";
 import SignUpContainer from "~/components/SignUpContainer";
-import FooterBase from "~/components/Footer";
-import HeaderContainer from "~/components/Header";
+
 export const meta: MetaFunction = () => {
   return [
     { logo: "/favicon.ico" },
@@ -40,8 +39,6 @@ export default function Index() {
 
   return (
     <Container className="grid">
-      <HeaderContainer />
-
       <Content>
         {/* Hero section */}
         <Hero
@@ -86,7 +83,6 @@ export default function Index() {
       </Content>
 
       <Divider className="text-gray-400" />
-      <FooterBase />
     </Container>
   );
 }
